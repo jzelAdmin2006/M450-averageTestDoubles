@@ -6,7 +6,9 @@ skinparam dpi  00
 
 package "Average.Average" {
     class FileAccess {
-        {static}{method} +ReadNumbers(path:string):List<int>
+        {field} -path:string
+        {method} +FileAccess(path:string)
+        {method} +ReadNumbers():List<int>
     }
 
     class Average {
