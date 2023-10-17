@@ -14,19 +14,21 @@ public class Program
         }
         string statistic = args[0].ToLower();
         string path = args[1];
+        Average.FileAccess fileAccess = new Average.FileAccess(path);
+        Average.Average average = new Average.Average(fileAccess);
         if (statistic.Equals("mean"))
         {
-            double result = Average.Average.ComputeMeanOfFile(path);
+            double result = average.ComputeMeanOfFile();
             Console.WriteLine(result);
         }
         else if (statistic.Equals("median"))
         {
-            double result = Average.Average.ComputeMedianOfFile(path);
+            double result = average.ComputeMedianOfFile();
             Console.WriteLine(result);
         }
         else if (statistic.Equals("mode"))
         {
-            List<int> result = Average.Average.ComputeModeOfFile(path);
+            List<int> result = average.ComputeModeOfFile();
             foreach (int value in result)
             {
                 Console.WriteLine(value);

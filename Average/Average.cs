@@ -2,23 +2,27 @@ namespace Average;
 
 public class Average
 {
-    public static double ComputeMeanOfFile(string path)
+    public Average(FileAccess fileAccess)
     {
-        FileAccess fileAccess = new FileAccess(path);
+        this.fileAccess = fileAccess;
+    }
+
+    private readonly FileAccess fileAccess;
+
+    public double ComputeMeanOfFile()
+    {
         List<int> numbers = fileAccess.ReadNumbers();
         return Statistics.Mean(numbers);
     }
 
-    public static double ComputeMedianOfFile(string path)
+    public double ComputeMedianOfFile()
     {
-        FileAccess fileAccess = new FileAccess(path);
         List<int> numbers = fileAccess.ReadNumbers();
         return Statistics.Median(numbers);
     }
 
-    public static List<int> ComputeModeOfFile(string path)
+    public List<int> ComputeModeOfFile()
     {
-        FileAccess fileAccess = new FileAccess(path);
         List<int> numbers = fileAccess.ReadNumbers();
         return Statistics.Mode(numbers);
     }

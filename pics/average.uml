@@ -12,9 +12,10 @@ package "Average.Average" {
     }
 
     class Average {
-        {static}{method} +ComputeMeanOfFile(path:string):double
-        {static}{method} +ComputeMedianOfFile(path:string):double
-        {static}{method} +ComputeModeOfFile(path:string):List<int>
+        {field} -fileAccess:FileAccess
+        {method} +ComputeMeanOfFile():double
+        {method} +ComputeMedianOfFile():double
+        {method} +ComputeModeOfFile():List<int>
     }
 
     class Statistics {
@@ -23,7 +24,7 @@ package "Average.Average" {
         {static}{method} +Mode(path:List<int>):List<int>
     }
 
-    Average --> FileAccess
+    Average *-> FileAccess
     Average --> Statistics
 }
 
