@@ -13,6 +13,7 @@ package "Average.Average" {
 
     class Average {
         {field} -fileAccess:FileAccess
+        {method} +Average(fileAccess:FileAccess)
         {method} +ComputeMeanOfFile():double
         {method} +ComputeMedianOfFile():double
         {method} +ComputeModeOfFile():List<int>
