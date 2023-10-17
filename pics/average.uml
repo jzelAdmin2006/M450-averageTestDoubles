@@ -24,7 +24,7 @@ package "Average.Average" {
         {static}{method} +Mode(path:List<int>):List<int>
     }
 
-    Average *-> FileAccess
+    Average o-> FileAccess
     Average --> Statistics
 }
 
