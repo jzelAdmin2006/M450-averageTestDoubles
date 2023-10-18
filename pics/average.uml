@@ -2,7 +2,6 @@
 
 skinparam monochrome true
 skinparam defaultFontName "Fantasque Sans Mono"
-skinparam dpi  00
 
 package "Average.Average" {
     class FileAccess {
