@@ -26,7 +26,7 @@ public class Statistics
         }
         else if (n % 2 == 0)
         {
-            return (numbers[n / 2 - 1] + numbers[n / 2]) / 2;
+            return (numbers[n / 2 - 1] + numbers[n / 2]) / 2.0;
         }
         else
         {
