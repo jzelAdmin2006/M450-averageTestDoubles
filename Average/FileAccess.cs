@@ -1,6 +1,6 @@
 namespace Average;
 
-public class FileAccess
+public class FileAccess : IFileOperations
 {
     public FileAccess(string path)
     {
