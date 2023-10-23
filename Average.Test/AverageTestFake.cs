@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Average.Test
 {
-    public class AverageTest
+    public class AverageTestFake
     {
         private static Average FromFilePath(string filePath)
         {
