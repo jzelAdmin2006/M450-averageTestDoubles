@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Moq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,19 @@ namespace Average.Test
         public void TestAverageCalculationsFlexible<T>(int[] input, Func<Average, T> toTest, object expected)
         {
             Average average = new(new FlexibleStubFileAccess(input.ToList()));
+
+            object actual = toTest(average);
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Theory]
+        [MemberData(nameof(SimpleStubTestCases))]
+        public void TestAverageCalculationsMoq<T>(Func<Average, T> toTest, object expected)
+        {
+            var fileOperations = new Mock<IFileOperations>();
+            fileOperations.Setup(fo => fo.ReadNumbers()).Returns(new List<int> { 1, 2, 3, 4, 5 });
+            Average average = new(fileOperations.Object);
 
             object actual = toTest(average);
 
