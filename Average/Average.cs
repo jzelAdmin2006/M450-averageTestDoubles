@@ -2,12 +2,12 @@ namespace Average;
 
 public class Average
 {
-    public Average(FileAccess fileAccess)
+    public Average(IFileOperations fileAccess)
     {
         this.fileAccess = fileAccess;
     }
 
-    private readonly FileAccess fileAccess;
+    private readonly IFileOperations fileAccess;
 
     public double ComputeMeanOfFile()
     {
